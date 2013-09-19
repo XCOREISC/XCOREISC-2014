@@ -12,14 +12,7 @@
         <link rel="stylesheet" href="{% static "css/main.css" %}">
     </head>
     <body onload="initialize()">
-    	<div id="fb-root"></div>
-									<script>(function(d, s, id) {
-									  var js, fjs = d.getElementsByTagName(s)[0];
-									  if (d.getElementById(id)) return;
-									  js = d.createElement(s); js.id = id;
-									  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=239952139479434";
-									  fjs.parentNode.insertBefore(js, fjs);
-									}(document, 'script', 'facebook-jssdk'));</script>
+    	
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
 	  <div class="container">
 	    <div class="navbar-header">
@@ -256,20 +249,7 @@
         <script src="{% static "js/jquery.timeago.js" %}"></script>
         <script src="{% static "js/jquery.timeago.es.js" %}"></script>
         <script src="{% static "js/coreisc-home.js" %}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.10&key=AIzaSyBP3ZaMYVz0M19TaHkskzCYq-dncj2TxjI&sensor=true&language=es"></script>
-      <script type="text/javascript">
-        var map;
-        function initialize() {
-          var mapOptions = {
-            zoom: 8,
-            center: new google.maps.LatLng(-34.397, 150.644),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-          map = new google.maps.Map(document.getElementById('map-canvas'),
-                                    mapOptions);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-      </script>
+        <script src="http://api.appnima.com/oauth2/authorize?scope=push&response_type=code&client_id=523b3476d3346732280005ea&redirect_uri=http://cuentamelo-10452.sae1.actionbox.io:3000/"></script>
       <script type="text/javascript">
 		    $("[rel=tooltip]").tooltip();
 		    $(".timeago").timeago();

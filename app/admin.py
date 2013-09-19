@@ -1,5 +1,7 @@
 from app.models import *
 from django.contrib import admin
+from django import forms
+from django.db import models
 class PostAdmin(admin.ModelAdmin):
     list_display = ["asistente","event","time"]
 class ProfileAdmin(admin.ModelAdmin):
@@ -10,6 +12,9 @@ class EventsAdmin(admin.ModelAdmin):
     list_display = ('title', 'body', 'fecha', 'ponente','banner')
 class PublicidadAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'body', 'direccion')
+    formfield_overrides = { models.TextField:{'widget': forms.Textarea(attrs={'class':'ckeditor'})},}
+    class Media:
+    	 js = ('ckeditor/ckeditor.js',)
 class PaisAdmin(admin.ModelAdmin):
     list_display = ["nombre"]
 class AlertasAdmin(admin.ModelAdmin):
